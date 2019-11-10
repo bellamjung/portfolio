@@ -1,0 +1,519 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+  background-color: #ddd;
+  background-color: white;
+  font-size: 18px;
+  font-family: "Futura", serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  font-size: 50px;
+  line-height: 1;
+  padding: 50px 0;
+  text-align: center;
+  text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+}
+
+h2{
+  font-size: 32px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+nav ul{
+  list-style-type: none;
+  text-align: center;
+}
+
+nav li{
+  display:inline;
+  padding-right: 30px;
+  padding-top: 10px;
+}
+
+nav a{
+  color: black;
+  font-weight: normal;
+  font-size: 75%;
+  text-decoration: none;
+}
+
+nav a:hover{
+  text-decoration: underline;
+}
+
+.skip a{
+  background: white;
+  left: 0;
+  padding: 6px;
+  position: absolute;
+  top:-40px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+}
+
+.skip a:focus {
+    top: 0px;
+  }
+
+:focus {
+    border:2px solid black;
+    }
+
+    /* gallery */
+.row {
+      margin: 8px -16px;
+    }
+
+.gallery img:hover{
+    width: 100%;
+    opacity: .5;
+    }
+
+
+.row,
+.row > .gallery {
+      padding: 8px;
+    }
+
+.gallery {
+    grid-column: 1 / -1;
+    float: left;
+    width: 50%;
+    overflow: hidden;
+    }
+
+.row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+.content {
+      background-color: white;
+      padding: 10px;
+    }
+
+    /* end gallery */
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1em;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.a-listing {
+  position: relative;
+}
+
+.a-image {
+  line-height: 0;
+}
+
+.a-title {
+  display: none;
+}
+
+/* start form - inspired by https://codepen.io/ZachSaucier/pen/AIJpe*/
+
+form { max-width:420px; margin:50px auto; }
+
+.feedback-input {
+  color:black;
+  font-family: Futura, sans serif;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border:2px solid gold;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+.feedback-input:focus { border:2px solid turquoise; }
+
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+
+[type="submit"] {
+  font-family: 'Futura', sans-serif;
+  width: 100%;
+  background:turquoise;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+[type="submit"]:hover { background: gold; }
+
+/* end form */
+/*
+begin flip card */
+
+/* begin flip card */
+.flip-card {
+  background-color: gold;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-in {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-in {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: turquoise;
+  color: white;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: turquoise;
+  color: white;
+  justify-content: center;
+  transform: rotateY(180deg);
+}
+
+/* end flip card */
+
+/* begin typewriter - inspo from https://css-tricks.com/snippets/css/typewriter-effect/*/
+
+.typewriter h2 {
+  overflow: hidden; /* content is not revealed until the animation */
+  border-right: .15em transparent; /* The typwriter cursor */
+  white-space: nowrap; /* single line */
+  margin: 0 auto; /* scrolling effect as typing */
+  letter-spacing: .30em;
+  animation:
+    typing 3.5s steps(60, end),
+    blink-caret .75s step-end 2;
+}
+
+/* typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: blue }
+}
+
+/* end typewriter */
+
+
+
+footer{
+  background-color: black;
+  color: white;
+  grid-column: 1 / -1;
+  grid-row: 7 / auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  line-height: 30px;
+}
+
+
+
+@media screen and (min-width:600px) and (max-width:799px) {
+
+  nav ul{
+    list-style-type: none;
+    text-align: left;
+  }
+
+  nav li{
+    display:table-row;
+    padding-left: 30px;
+    padding-top: 10px;
+  }
+
+  nav a{
+    color: black;
+    font-weight: normal;
+    font-size: 100%;
+    text-decoration: none;
+
+  }
+
+  nav a:hover{
+    text-decoration: underline;
+  }
+
+  .skip a{
+    background: white;
+    left: 0;
+    padding: 6px;
+    position: absolute;
+    top:-40px
+    -webkit-transition: top 1s ease-out;
+    transition: top 1s ease-out;
+    z-index: 1;
+  }
+
+
+  .skip a:focus {
+      top: 0px;
+    }
+
+
+  :focus {
+      border:2px solid black;
+      }
+    }
+
+  .gallery{
+  		float: left;
+  		width: 33%;
+  		overflow: hidden;
+  	}
+
+  .gallery img{
+  		width: 100%;
+  		opacity: 1.0;
+  	}
+
+
+@media screen and (min-width:800px) {
+
+    nav ul{
+        list-style-type: none;
+        text-align: right;
+      }
+
+    nav li{
+        display: list-item;
+        padding-right: 30px;
+        padding-top: 10px;
+      }
+
+    nav a{
+        color: black;
+        font-weight: normal;
+        font-size: 100%;
+        text-decoration: none;
+
+      }
+
+    nav a:hover{
+        text-decoration: underline;
+      }
+
+    .skip a{
+        background: white;
+        left: 0;
+        padding: 6px;
+        position: absolute;
+        top:-40px
+        -webkit-transition: top 1s ease-out;
+        transition: top 1s ease-out;
+        z-index: 1;
+      }
+
+
+    .skip a:focus {
+          top: 0px;
+        }
+
+
+    :focus {
+          border:2px solid black;
+          }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-gap: 1em;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .a-listing {
+      position: relative;
+    }
+
+    .a-image {
+      line-height: 0;
+    }
+
+    .a-title {
+      width:auto;
+      text-align:left;
+      line-height: 30px;
+      display:block;
+      background-color: transparent;
+      border: 1px solid transparent;
+      margin-right: 0px;
+      margin-bottom: 0px;
+      float:left;
+
+      /* typographic styles */
+      color: black;
+      font-size: 0.75em;
+      font-family: 'Futura';
+      text-decoration: none;
+      font-size-adjust: auto;
+
+      /* position the text centrally*/
+      display: flex;
+      align-items: center;
+      justify-content: left;
+    }
+
+    /* beginning of parallax - inspo for this code is from https://codepen.io/karldanninger/pen/NwzMzN*/
+.MainContainer {
+          perspective: 1px;
+          transform-style: preserve-3d;
+          height: 100vh;
+          overflow-x: hidden;
+          overflow-y: scroll;
+        }
+.ContentContainer {
+          position: relative;
+          display: block;
+          background-color: white;
+          z-index: 1;
+        }
+
+.contents {
+          margin: 0 auto;
+          padding: 0px;
+        }
+
+.ParallaxContainer {
+          display: flex;
+          flex: 1 0 auto;
+          position: relative;
+          z-index: -1;
+          height: 100vh;
+          justify-content: center;
+          align-items: center;
+          transform: translateZ(-1px) scale(2);
+          background: url(https://images.unsplash.com/photo-1571226596652-17a84cc563d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80);
+          background-color: rgb(250,228, 216);
+          filter: opacity(80%);
+        }
+
+/* begin flip card */
+.flip-card {
+  background-color: gold;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-in {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-in {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: turquoise;
+  color: white;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: turquoise;
+  color: white;
+  justify-content: center;
+  transform: rotateY(180deg);
+}
+
+@media screen and (prefers-reduced-motion: reduce){
+  html{
+      scroll-behavior: auto;
+  }
+
+  .skip a{
+    background: white;
+    left: 0;
+    padding: 6px;
+    position: absolute;
+    top: -40px;
+    -webkit-transition: none !important;/
+    transition: none !important;/
+    z-index: 1;
+  }
+
+  .skip a:focus{
+    top:0;
+  }
+}
